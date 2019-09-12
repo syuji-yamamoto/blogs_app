@@ -1,0 +1,37 @@
+<div class = "container">
+  <div class = "row" >
+    <%= form_for @blog do |f| %>
+      <% if flash.now[:notice] %>
+        <p><%= flash.now[:notice] %></p>
+      <% end %>
+    <div class = "container">
+      <div class = "cols9" >
+        <p>
+          <%= f.label :title, "タイトル" %><br>
+          <%= f.text_field :title %>
+        </p>
+      </div>
+    </div>
+      
+    <div class = "container">
+      <div class = "cols9">
+        <div class = "h-30">
+          <p>
+            <%= f.label :text, "内容" %><br>
+            <%= f.text_area :text %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "container">
+      <div class = "cols9" >
+        <p>
+          <%= f.submit "送信" %>
+        </p>
+        <%= link_to '戻る', "/" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
